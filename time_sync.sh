@@ -1,7 +1,7 @@
 #!/bin/bash
 # Automatically Updates System Time According to the NIST Atomic Clock in a Linux Environment
 while true; do
-nistTime=$(curl -10 -s -I --insecure '104.26.4.10' | grep "ate:")
+nistTime=$(curl -m10 -s -I --insecure '104.26.4.10' | grep "ate:")
 echo $nistTime
 dateString=$(echo $nistTime | cut -d' ' -f2-7)
 dayString=$(echo $nistTime | cut -d' ' -f2-2)
